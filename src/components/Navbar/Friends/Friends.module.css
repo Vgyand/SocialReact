@@ -1,0 +1,11 @@
+.friends{
+    margin-top: 50px;
+    text-align: center;
+}
+.friendItem_img{
+    height: 20px;
+    width: 20px;
+}
+.friendsWrapper{
+    margin-top: 30px;
+}
