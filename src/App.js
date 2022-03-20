@@ -6,7 +6,7 @@ import DialogsContainer from './components/Dialogs/DialogsContainer'
 import './App.css';
 import {
   Route,
-  Routes,
+
   BrowserRouter
 } from "react-router-dom";
 
@@ -19,16 +19,12 @@ function App(props) {
         <Header />
         <Navbar />
         <div className='app-wrapper-content'>
-          <Routes>
-            <Route path="/dialogs/*" element={<DialogsContainer />} />
-            <Route path="/users" element={<UsersContainer />} />
-            <Route path="/profile/*" element={<ProfileContainer />} />
-          </Routes>
+          <Route path="/dialogs" render={() => <DialogsContainer />} />
+          <Route path="/users" render={() => <UsersContainer />} />
+          <Route path="/profile/:userId?" render={() => <ProfileContainer />} />
         </div>
       </div>
     </BrowserRouter>
-
-
   );
 }
 
