@@ -3,12 +3,13 @@ import Navbar from './components/Navbar/Navbar'
 import ProfileContainer from './components/Profile/ProfileContainer'
 import UsersContainer from './components/Users/UsersContainer'
 import DialogsContainer from './components/Dialogs/DialogsContainer'
+import Login from './components/Login/Login'
 import './App.css';
 import {
   Route,
-
   BrowserRouter
 } from "react-router-dom";
+
 
 
 function App(props) {
@@ -22,6 +23,7 @@ function App(props) {
           <Route path="/dialogs" render={() => <DialogsContainer />} />
           <Route path="/users" render={() => <UsersContainer />} />
           <Route path="/profile/:userId?" render={() => <ProfileContainer />} />
+          <Route path="/login" render={() => <Login />} />
         </div>
       </div>
     </BrowserRouter>
