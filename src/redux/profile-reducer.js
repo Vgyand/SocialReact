@@ -94,7 +94,6 @@ export const updateStatus = (status) => (dispatch) => {
             if (response.data.resultCode === 0) {
                 dispatch(setStatus(status))
             }
-
         });
 }
 
