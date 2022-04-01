@@ -3,6 +3,21 @@ import style from './Dialogs.module.css'
 import DialogItem from './DialogItem/DialogItem'
 import Message from './Message/Message'
 import { Redirect } from 'react-router'
+import { Field } from 'redux-form'
+import { reduxForm } from 'redux-form'
+
+const AddMessageForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <Field component={'textarea'} name="newMessageText" />
+            <div>
+                <button>puk</button>
+            </div>
+        </form>
+    )
+}
+
+const AddMessageFormRedux = reduxForm({ form: 'dialogAddMessageForm' })(AddMessageForm);
 
 const Dialogs = (props) => {
 
@@ -15,15 +30,10 @@ const Dialogs = (props) => {
         return <Message key={message.id} message={message.message} />
     })
 
-    let newMessageText = state.newMessageText
+    let addNewMessage = (values) => {
+        props.sendMessage(values.newMessageText)
+    }
 
-    let onNewMessageChange = (e) => {
-        let body = e.target.value
-        props.updateNewMessageBody(body)
-    }
-    let onSendMessageClick = () => {
-        props.sendMessage()
-    }
     if (props.isAuth === false) return <Redirect to={'/login'} />
 
     return (
@@ -34,10 +44,8 @@ const Dialogs = (props) => {
             <div className={style.messages}>
                 {messageElements}
             </div>
-            <textarea onChange={onNewMessageChange} value={newMessageText} name="" id="" cols="30" rows="10"></textarea>
-            <div>
-                <button onClick={onSendMessageClick}>puk</button>
-            </div>
+
+            <AddMessageFormRedux onSubmit={addNewMessage} />
         </div>
     )
 }
