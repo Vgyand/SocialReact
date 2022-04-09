@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './FromControl.module.css'
+import style from './FormsControl.module.css'
 
 export const Textarea = ({ input, meta, ...props }) => {
     const hasError = meta.error && meta.touched
