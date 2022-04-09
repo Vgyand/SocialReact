@@ -5,11 +5,16 @@ import Message from './Message/Message'
 import { Redirect } from 'react-router'
 import { Field } from 'redux-form'
 import { reduxForm } from 'redux-form'
+import { Textarea } from '../common/FormsControls/FormsControl'
+import { requiredField, maxLengthCreator } from '../utils/validators/validators'
+
+const maxLength10 = maxLengthCreator(10)
+
 
 const AddMessageForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
-            <Field component={'textarea'} name="newMessageText" />
+            <Field component={Textarea} validate={[requiredField, maxLength10]} name="newMessageText" />
             <div>
                 <button>puk</button>
             </div>
