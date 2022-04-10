@@ -16,7 +16,6 @@ const MyPosts = (props) => {
         return <Post key={post.id} message={post.message} likes={post.likesCount} />
     })
 
-    console.log(props)
     let onAddPost = (value) => {
         props.addPost(value.newPostText)
     }
