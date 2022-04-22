@@ -1,8 +1,14 @@
 .header {
     grid-area: h;
-    background-color: green;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 90%;
 }
 
 .header img {
-    width: 20px;
+    width: 50px;
 }
