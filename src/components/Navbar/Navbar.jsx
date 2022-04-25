@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import style from './Navbar.module.css'
 import './Navbar.css'
-// import Friends from './Friends/Friends'
+
 
 
 const Navbar = (props) => {
